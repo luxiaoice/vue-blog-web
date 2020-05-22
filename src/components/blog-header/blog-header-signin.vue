@@ -16,7 +16,7 @@
     
 </template>
 <script>
-import signinTriangle from "@/components/blog-header/bolg-signin-triangle.vue"
+import signinTriangle from "@/components/blog-header/bolg-header-signin-triangle.vue"
 export default {
     name:"blogSignin",
     components: {
@@ -37,10 +37,13 @@ export default {
         background: fuchsia;
         border: 0.95px solid bisque;
         border-radius: 28px;
-        
     }
     .signin-icon:hover{
         transform: scale(1.66667);
+        /*鼠标滑过显示为手*/
+        cursor:pointer;
+        /* 阴影 */
+        box-shadow: 0px 0px 1px 1px #888;
     }
     .signin-icon:hover+.signin-page{
         display: block;
@@ -51,6 +54,8 @@ export default {
     }
     .signin-page{
         display: none;
+        width: 200px;
+        height: 306px;
     }
     .signin-page-conn{
         width: 200px;

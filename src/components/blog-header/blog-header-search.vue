@@ -1,8 +1,7 @@
 <template>
         <div class="blog-search">
             <form action="/search" method="get">
-                <input class="search-input" @keyup.enter="submit" type="text" placeholder="搜索...">
-                <button class="search-button" type="submit">
+                <input class="search-input" @keyup.enter="submit" type="text" placeholder="搜索..."><button class="search-button" type="submit">
                     <img class="icon-search-img" src="../../assets/icon/Search.png"/>
                 </button>
             </form>
@@ -26,6 +25,7 @@ export default {
         display: flex; /* 设置为块元素 */
         width: 168px;
         height: 36px;
+        font-size:0;
         line-height: 36px; /* 设置垂直居中 */
         text-align: center;
         border-radius: 25px;/*圆角*/
@@ -44,6 +44,7 @@ export default {
     }
     .search-input{
        display:block;
+       float:left;
        height: 36px;
        width: 118px;
        font-size: 16px;
@@ -53,22 +54,20 @@ export default {
        padding: 0px;
        border: none; 
     }
-    .icon-search-img{
-        width: 36px;
-        height: 36px;
-    }
     .icon-search-img:hover{
         /*鼠标滑过显示为手*/
         cursor:pointer
     }
+    .icon-search-img{
+        width: 36px;
+        height: 36px;
+    }
     .search-button{
-        display: block;
+        display: flex;
         /* 样式 */
         width: 36px;
         height: 36px;
-        position: absolute;
-        top: 0px;
-        left: 147px;
+        position:relative;
         border-radius: 25px;
         /* 默认样式清空 */
         outline: none;
