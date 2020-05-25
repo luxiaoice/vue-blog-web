@@ -42,7 +42,6 @@ export default {
         text-align: center;
         grid-template-rows: 45% 55%;
         border-radius: 6px;/*圆角*/
-        background: #66ccff;
         box-shadow: 0px 0px 1px 3px rgb(196, 177, 177)
     }
     .blog-main-left-top-ltem{
@@ -75,7 +74,6 @@ export default {
         line-height: 36px; /* 设置垂直居中 */
         text-align: center;
         border-radius: 6px;/*圆角*/
-        background: #66ccff;
         box-shadow: 0px 0px 1px 4px rgb(196, 177, 177)
     }
     .blog-main-left-bottom:hover{

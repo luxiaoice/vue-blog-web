@@ -1,8 +1,6 @@
 <template>
   <div id="app">
     <blog-container></blog-container>
-    <router-view/>
-
   </div>
 </template>
 <script>

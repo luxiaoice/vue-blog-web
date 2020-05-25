@@ -4,9 +4,9 @@
 
         </div>
         <div class="blog-main-middle-middle">
-
+            <router-view/>
         </div>
-        <div class="blog-main-middle-bottpm">
+        <div class="blog-main-middle-bottom">
 
         </div> 
     </div>
@@ -34,9 +34,14 @@ export default {
         border:1px solid #888;
          /* 轮廓 */
         outline: 1px #888;
-        background: #66ccff;
         border-radius: 6px;/*圆角*/
         box-shadow: 0px 0px 1px 3px rgb(196, 177, 177)
+    }
+    .blog-main-middle-top:hover{
+         /*鼠标滑过显示为手*/
+        cursor:pointer;
+        /* 阴影 */
+        box-shadow: 0px 0px 1px 4px #888;
     }
     .blog-main-middle-middle{
         display: flex; /* 设置为块元素 */
@@ -49,11 +54,16 @@ export default {
         border:1px solid #888;
          /* 轮廓 */
         outline: 1px #888;
-        background: #66ccff;
          border-radius: 6px;/*圆角*/
         box-shadow: 0px 0px 1px 3px rgb(196, 177, 177)
     }
-    .blog-main-middle-bottpm{
+    .blog-main-middle-middle:hover{
+         /*鼠标滑过显示为手*/
+        cursor:pointer;
+        /* 阴影 */
+        box-shadow: 0px 0px 1px 4px #888;
+    }
+    .blog-main-middle-bottom{
         display: flex; /* 设置为块元素 */
         width: 100%;
         height: 50px;
@@ -64,8 +74,13 @@ export default {
         border:1px solid #888;
          /* 轮廓 */
         outline: 1px #888;
-        background: #66ccff;
-         border-radius: 6px;/*圆角*/
+        border-radius: 6px;/*圆角*/
         box-shadow: 0px 0px 1px 3px rgb(196, 177, 177)
+    }
+    .blog-main-middle-bottpm:hover{
+         /*鼠标滑过显示为手*/
+        cursor:pointer;
+        /* 阴影 */
+        box-shadow: 0px 0px 1px 4px #888;
     }
 </style>

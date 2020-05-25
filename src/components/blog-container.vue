@@ -3,7 +3,6 @@
         <blog-header/>
         <blog-main/>
         <blog-footer/>
-
     </div>
 </template>
 <script>
