@@ -16,6 +16,6 @@ export default {
         grid-template-rows: 45% 55%;
         border-radius: 6px;/*圆角*/
         background: #66ccff;
-        box-shadow: 0px 0px 1px 3px rgb(196, 177, 177)
+        box-shadow: 0px 0px 10px rgb(196, 177, 177)
   }
 </style>

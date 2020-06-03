@@ -42,7 +42,7 @@ export default {
         text-align: center;
         grid-template-rows: 45% 55%;
         border-radius: 6px;/*圆角*/
-        box-shadow: 0px 0px 1px 3px rgb(196, 177, 177)
+        box-shadow: 0px 0px 6px rgb(196, 177, 177)
     }
     .blog-main-left-top-ltem{
         text-decoration:none;
@@ -53,7 +53,7 @@ export default {
          /*鼠标滑过显示为手*/
         cursor:pointer;
         /* 阴影 */
-        box-shadow: 0px 0px 1px 4px #888;
+        box-shadow: 0px 0px 6px rgb(138, 123, 123)
     }
      .blog-main-left-top-head{
         display: grid;
@@ -74,12 +74,12 @@ export default {
         line-height: 36px; /* 设置垂直居中 */
         text-align: center;
         border-radius: 6px;/*圆角*/
-        box-shadow: 0px 0px 1px 4px rgb(196, 177, 177)
+        box-shadow: 0px 0px 6px rgb(196, 177, 177)
     }
     .blog-main-left-bottom:hover{
          /*鼠标滑过显示为手*/
         cursor:pointer;
         /* 阴影 */
-        box-shadow: 0px 0px 1px 4px #888;
+        box-shadow: 0px 0px 10px rgb(138, 123, 123)
     }
 </style>

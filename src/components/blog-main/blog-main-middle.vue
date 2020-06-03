@@ -30,18 +30,14 @@ export default {
         height: 50px;
         line-height: 36px; /* 设置垂直居中 */
         text-align: center;
-        /* 边线 */
-        border:1px solid #888;
-         /* 轮廓 */
-        outline: 1px #888;
         border-radius: 6px;/*圆角*/
-        box-shadow: 0px 0px 1px 3px rgb(196, 177, 177)
+        box-shadow: 0px 0px 6px rgb(196, 177, 177)
     }
     .blog-main-middle-top:hover{
          /*鼠标滑过显示为手*/
         cursor:pointer;
         /* 阴影 */
-        box-shadow: 0px 0px 1px 4px #888;
+        box-shadow: 0px 0px 6px rgb(138, 123, 123)
     }
     .blog-main-middle-middle{
         display: flex; /* 设置为块元素 */
@@ -49,19 +45,16 @@ export default {
         height: 500px;
         line-height: 36px; /* 设置垂直居中 */
         text-align: center;
-        border-radius: 25px;/*圆角*/
-        /* 边线 */
-        border:1px solid #888;
          /* 轮廓 */
         outline: 1px #888;
          border-radius: 6px;/*圆角*/
-        box-shadow: 0px 0px 1px 3px rgb(196, 177, 177)
+         box-shadow: 0px 0px 6px rgb(196, 177, 177)
     }
     .blog-main-middle-middle:hover{
          /*鼠标滑过显示为手*/
         cursor:pointer;
         /* 阴影 */
-        box-shadow: 0px 0px 1px 4px #888;
+        box-shadow: 0px 0px 6px rgb(138, 123, 123)
     }
     .blog-main-middle-bottom{
         display: flex; /* 设置为块元素 */
@@ -69,18 +62,14 @@ export default {
         height: 50px;
         line-height: 36px; /* 设置垂直居中 */
         text-align: center;
-        border-radius: 25px;/*圆角*/
-        /* 边线 */
-        border:1px solid #888;
          /* 轮廓 */
-        outline: 1px #888;
         border-radius: 6px;/*圆角*/
-        box-shadow: 0px 0px 1px 3px rgb(196, 177, 177)
+        box-shadow: 0px 0px 6px rgb(196, 177, 177)
     }
-    .blog-main-middle-bottpm:hover{
+    .blog-main-middle-bottom:hover{
          /*鼠标滑过显示为手*/
         cursor:pointer;
         /* 阴影 */
-        box-shadow: 0px 0px 1px 4px #888;
+        box-shadow: 0px 0px 6px rgb(138, 123, 123)
     }
 </style>

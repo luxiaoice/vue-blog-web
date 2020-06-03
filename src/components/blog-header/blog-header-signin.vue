@@ -43,7 +43,7 @@ export default {
         /*鼠标滑过显示为手*/
         cursor:pointer;
         /* 阴影 */
-        box-shadow: 0px 0px 1px 1px #888;
+        box-shadow: 0px 0px 10px rgb(138, 123, 123);
     }
     .signin-icon:hover+.signin-page{
         display: block;
