@@ -32,14 +32,17 @@ export default {
     .blog-nav{
         position: grid;
         left: 80px;
+        height: 38px;
     }
     .blog-search{
         position: grid;
-        left: 200px；
+        left: 200px;
+        height: 38px;
     }
     .blog-signin{
         position: grid;
         left: 100px;
+        height: 38px;
     }
 
 </style>

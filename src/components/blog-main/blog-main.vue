@@ -21,7 +21,7 @@ export default {
 <style scoped>
 .blog-main{
     display: grid;
-    grid-template-columns: 18% 55% 27%;
+    grid-template-columns: 25% 50% 25%;
     gap:2%;
     background:rgb(255, 255, 255,0.5);
     padding: 12px;
