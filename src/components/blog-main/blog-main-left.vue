@@ -6,17 +6,26 @@
                 <div class="blog-main-left-top-head-icon">
                     <img class="icon-avatar-img" src="../../assets/icon/avatar.png"/>
                     <div class="blog-main-left-top-hand-ltems">
-                        路小野
+                        {{user.name}}
                     </div>
                 </div>
             </div>
-            <div class="blog-main-left-top-ltems">
-                    <a href="https://github.com/luxiaoice" target="_blank"></a>
+            <div class="blog-main-left-top-ltems" v-if="user.github!=null">
+                    <a :href="user.github" target="_blank"></a>
             </div>
         </div>
         
         <div class="blog-main-left-bottom">
-
+            <div class="blog-main-left-bottom-top">
+                <div class=“blog-main-left-bottom-top-left”>分类</div>
+            </div>
+            <div class="blog-main-left-bottom-item-box">
+                <div class="blog-main-left-bottom-item" v-for="tag in tags" :key="tag.id">
+                    <a @click="chickTag(tag.name)">
+                        {{tag.name}}
+                    </a>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -24,6 +33,33 @@
 <script>
 export default {
     name:"blogMainLeft",
+    data(){ 
+        return{
+            user:{
+
+            },
+            tags:[
+
+            ]
+        }
+    },
+    created(){
+        this.$axios.post('/blog/userCard')
+        .then((response)=>{
+        this.user=response.data.user;
+        })
+        .catch((response)=>{
+        console.log(response);
+      }),
+      this.$axios.post("/blog/tags")
+      .then((response)=>{
+          this.tags=response.data.tags;
+      })
+      .catch((response)=>{
+          console.log(response)
+      })
+
+    },
 }
 </script>
 <style scoped>
@@ -32,6 +68,8 @@ export default {
         grid-template-rows: 50% 50%;
         gap: 4%;
         width: 100%;
+        min-width: 235px;
+        max-width: 235px;
         height: 600px;
     }
     .blog-main-left-top{
@@ -40,17 +78,19 @@ export default {
         height: 285px;
         min-width: 235px;
         max-width: 235px;
+        background-color: rgba(230,238,232,0.65);
         line-height: 36px; /* 设置垂直居中 */
         text-align: center;
         grid-template-rows: 85% 15%;
         border-radius: 6px;/*圆角*/
-        box-shadow: 0px 0px 6px rgb(196, 177, 177)
+        box-shadow: 0px 0px 6px  rgba(255, 255, 255, 0.7)
     }
     .blog-main-left-top:hover{
          /*鼠标滑过显示为手*/
         cursor:pointer;
+        background-color: rgba(230,238,232,0.75);
         /* 阴影 */
-        box-shadow: 0px 0px 6px rgb(138, 123, 123)
+        box-shadow: 0px 0px 10px rgba(29, 28, 28)
     }
      .blog-main-left-top-head{
         display: grid;
@@ -128,15 +168,47 @@ export default {
         min-width: 235px;
         max-width: 235px;
         line-height: 36px; /* 设置垂直居中 */
+        background-color: rgba(230,238,232,0.65);
         text-align: center;
         border-radius: 6px;/*圆角*/
-        box-shadow: 0px 0px 6px rgb(196, 177, 177)
+        box-shadow: 0px 0px 6px  rgba(255, 255, 255, 0.7)
     }
     .blog-main-left-bottom:hover{
          /*鼠标滑过显示为手*/
         cursor:pointer;
         /* 阴影 */
-        box-shadow: 0px 0px 10px rgb(138, 123, 123)
+        background-color: rgba(230,238,232,0.75);
+        box-shadow: 0px 0px 10px  rgba(29, 28, 28)
+    }
+    .blog-main-left-bottom-top{
+        height: 36px;
+        display: grid;
+        width: 235px;
+        grid-template-columns: 35% 50% 15%;
+        color: rgba(250, 250, 250);
+        background-color: rgb(10,10,0,0.7);
+        border-radius: 6px 6px 0px 0px;
+    }
+    .blog-main-left-bottom-item{
+        display:flex;
+        margin: 10px;
+    }
+    .blog-main-left-bottom-item:hover{
+        display:flex;
+        margin: 10px;
+        background-color: rgb(10,10,0,0.7);
+        border-radius: 6px;
+    }
+    .blog-main-left-bottom-item:hover a{
+        color: rgb(255,255,255);
+    }
+    .blog-main-left-bottom-item a{
+        text-decoration: none;
+        color: #000;
+        margin-left: 70px;
+        margin-right: 70px;
+        height: 32px;
+        line-height: 32px;
     }
 
 </style>

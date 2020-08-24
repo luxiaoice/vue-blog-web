@@ -17,7 +17,7 @@ export default {
         width: 0px;
         border-width: 0px 6.5px 6.5px;
         border-style: solid;
-        border-color: transparent transparent rgb(148, 148, 148);
+        border-color: transparent transparent rgb(148, 148, 148,0.7);
 
         
     }
@@ -29,7 +29,7 @@ export default {
         top: 1px;
         border-width: 0px 6px 6px;
         border-style: solid;
-        border-color: transparent transparent rgb(255, 255, 255);
+        border-color: transparent transparent rgb(255, 255, 255,0.7);
         
     }
 </style>

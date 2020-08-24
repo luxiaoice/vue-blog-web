@@ -24,8 +24,8 @@ export default {
         width: 100%;
         height: 38px;
         grid-template-columns: 60% 20% 20%;
-        background:rgb(255, 255, 255,0.5);
-        box-shadow: 0px 0px 8px rgb(187, 168, 168);
+        background-color: rgba(230,238,232,0.65);
+        box-shadow: 0px 0px 8px rgb(109, 109, 109,0.7);
         padding: 12px;
         margin-bottom: 12px;
     }

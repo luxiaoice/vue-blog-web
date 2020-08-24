@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="blog-body">
         <blog-header/>
-        <blog-main/>
+        <blog-main calss="blog-main"/>
         <blog-footer/>
     </div>
 </template>
@@ -19,5 +19,11 @@ export default {
 }
 </script>
 <style scoped>
-    
+    .blog-main{
+        margin: auto;
+    }
+    .blog-body{
+        background: url('../assets/icon/c_写真end2.jpg') no-repeat fixed;
+        background-size:cover;   
+    }
 </style>

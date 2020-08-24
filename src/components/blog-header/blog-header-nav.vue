@@ -1,15 +1,31 @@
 <template>
     <nav class="blog-nav">
-        <router-link class="router-link" to="/">首页</router-link>
-        <router-link class="router-link" to="/types">分类</router-link>
-        <router-link class="router-link" to="/tags">标签</router-link>
-        <router-link class="router-link" to="/archives">归档</router-link>
-        <router-link class="router-link" to="/about">关于我</router-link>
+        <router-link class="router-link" :to="title.url" v-for="title in titles" 
+        :key="title.id">{{title.name}}</router-link>
     </nav>
 </template>
 <script>
 export default {
-    
+    name:"blogNav",
+    data(){ 
+        return{
+            titles:[
+                
+            ]
+        }
+    },
+    created(){
+        this.$axios.post('/blog/headerNav')
+        .then((response)=>{
+        this.titles=response.data.titles;
+        })
+        .catch((response)=>{
+        console.log(response);
+      })
+    },
+    mouthed:{
+      
+    }
 }
 </script>
 <style scoped>
@@ -20,7 +36,7 @@ export default {
     }
     .router-link{
         text-decoration: none;
-        color: #212121;
+        color: rgb(0, 0, 0);
         position: relative;
         display: block; /* 设置为块元素 */
         width: 86px;
@@ -31,13 +47,13 @@ export default {
         margin-right: 5px;
         line-height: 36px; /* 设置垂直居中 */
         text-align: center;
-        border: 1px solid #ccc;
+        border: 1px solid rgb(124, 109, 109,0.7);
         border-radius: 25px;
     }
     .router-link:hover{
          /*鼠标滑过显示为手*/
         cursor:pointer;
         /* 阴影 */
-        box-shadow: 0px 0px 3px rgb(138, 123, 123)
+        box-shadow: 0px 0px 3px  rgba(29, 28, 28,0.7)
     }
 </style>

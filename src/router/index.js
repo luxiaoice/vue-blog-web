@@ -53,6 +53,11 @@ Vue.use(VueRouter)
     name: 'Types',
     component: () => import(/* webpackChunkName: "types" */ '@/views/Types.vue')
   },
+  {
+    path: '/search',
+    name: 'Search',
+    component: () => import(/* webpackChunkName: "search" */ '@/views/Search.vue')
+  },
 ]
 
 const router = new VueRouter({

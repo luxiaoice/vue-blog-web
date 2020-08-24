@@ -21,11 +21,12 @@ export default {
 <style scoped>
 .blog-main{
     display: grid;
-    grid-template-columns: 25% 50% 25%;
-    gap:2%;
-    background:rgb(255, 255, 255,0.5);
-    padding: 12px;
-    width: 100%;
+    grid-template-columns: 235px auto 235px;
+    gap:30px;
+    padding: 30px;
+    width: 1100px;
     height: 650px;
+    min-width: 960px;
+    max-width: 1268px;
 }
 </style>
