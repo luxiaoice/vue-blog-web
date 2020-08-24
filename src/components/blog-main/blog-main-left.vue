@@ -163,6 +163,7 @@ export default {
     }
     .blog-main-left-bottom{
         display: grid; /* 设置为块元素 */
+        grid-template-rows: 12% 88%;
         width: 100%;
         height: 300px;
         min-width: 235px;

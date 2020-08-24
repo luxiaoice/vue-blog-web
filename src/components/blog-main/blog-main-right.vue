@@ -5,9 +5,10 @@
                 近期
             </div>
             <div class="blog-main-right-top-item-box">
-                <div class="blog-main-right-top-item" v-for="recentArticle in recentArticles" :key="recentArticle.id">
+                <div class="blog-main-right-top-item" v-for="recentArticle in recentArticles" 
+                :key="recentArticle.id"      >
                     <a @click="chickRecentArticle(RecentArticle.name)">
-                        {{recentArticle.name}}
+                        {{recentArticle.name | ellipsis}}
                     </a>
                 </div>
             </div>
@@ -17,9 +18,10 @@
                 文章
             </div>
             <div class="blog-main-right-bottom-item-box">
-                <div class="blog-main-right-bottom-item" v-for="hotArticle in hotArticles" :key="hotArticle.id">
+                <div class="blog-main-right-bottom-item" v-for="hotArticle in hotArticles" 
+                :key="hotArticle.id" :title="hotArticle.name">
                     <a @click="chickHotArticle(hotArticle.name)">
-                        {{hotArticle.name}}
+                        {{hotArticle.name | ellipsis}}
                     </a>
                 </div>
             </div>
@@ -37,6 +39,16 @@ export default {
             hotArticles:[
 
             ]
+        }
+    },
+    filters: {
+        //过滤器当字串大于7时后面的字符改为省略号
+        ellipsis (str) {
+            if (!str) return '';
+            if (str.length > 7) {
+                return str.slice(0,7) + '...';
+        }
+            return str;
         }
     },
     created(){
@@ -98,12 +110,13 @@ export default {
     .blog-main-right-top-item{
         display:flex;
         margin: 10px;
-        
+        padding-left: 5px;
+        padding-right: 5px;
     }
     .blog-main-right-top-item:hover{
         display:flex;
         background-color: rgb(10,10,0,0.7);
-        
+        border-radius: 6px;
     }
     .blog-main-right-top-item:hover a{
         color: rgb(255,255,255);
@@ -111,7 +124,8 @@ export default {
     .blog-main-right-top-item a{
         text-decoration: none;
         color: #000;
-        
+        margin-left: 35px;
+        margin-right: 35px;
         height: 32px;
         line-height: 32px;
     }
@@ -147,6 +161,7 @@ export default {
     .blog-main-right-bottom-item:hover{
         display:flex;
         background-color: rgb(10,10,0,0.7);
+        border-radius: 6px;
         
     }
     .blog-main-right-bottom-item:hover a{
@@ -155,7 +170,8 @@ export default {
     .blog-main-right-bottom-item a{
         text-decoration: none;
         color: #000;
-        
+        margin-left: 35px;
+        margin-right: 35px;
         height: 32px;
         line-height: 32px;
     }
