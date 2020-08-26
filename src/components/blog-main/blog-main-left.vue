@@ -44,14 +44,14 @@ export default {
         }
     },
     created(){
-        this.$axios.post('/blog/userCard')
+        this.$axios.get('/blog/getUserCard')
         .then((response)=>{
         this.user=response.data.user;
         })
         .catch((response)=>{
         console.log(response);
       }),
-      this.$axios.post("/blog/tags")
+      this.$axios.get("/blog/getTags")
       .then((response)=>{
           this.tags=response.data.tags;
       })
@@ -205,7 +205,7 @@ export default {
     }
     .blog-main-left-bottom-item a{
         text-decoration: none;
-        color: #000;
+        color: rgb(82, 81, 81);
         margin-left: 70px;
         margin-right: 70px;
         height: 32px;

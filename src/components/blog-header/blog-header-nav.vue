@@ -15,7 +15,7 @@ export default {
         }
     },
     created(){
-        this.$axios.post('/blog/headerNav')
+        this.$axios.get('/blog/getHeaderNav')
         .then((response)=>{
         this.titles=response.data.titles;
         })
@@ -36,7 +36,7 @@ export default {
     }
     .router-link{
         text-decoration: none;
-        color: rgb(0, 0, 0);
+        color: rgb(82, 81, 81);
         position: relative;
         display: block; /* 设置为块元素 */
         width: 86px;
@@ -54,6 +54,7 @@ export default {
          /*鼠标滑过显示为手*/
         cursor:pointer;
         /* 阴影 */
-        box-shadow: 0px 0px 3px  rgba(29, 28, 28,0.7)
+        box-shadow: 0px 0px 3px  rgba(29, 28, 28,0.7);
+        color: rgb(27, 27, 27);
     }
 </style>

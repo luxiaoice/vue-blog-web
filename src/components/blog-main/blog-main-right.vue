@@ -6,8 +6,8 @@
             </div>
             <div class="blog-main-right-top-item-box">
                 <div class="blog-main-right-top-item" v-for="recentArticle in recentArticles" 
-                :key="recentArticle.id"      >
-                    <a @click="chickRecentArticle(RecentArticle.name)">
+                :key="recentArticle.id" :title="recentArticle.name">
+                    <a @click="chickRecentArticle(recentArticle.name)">
                         {{recentArticle.name | ellipsis}}
                     </a>
                 </div>
@@ -52,20 +52,20 @@ export default {
         }
     },
     created(){
-        this.$axios.post('/blog/recentArticle')
+        this.$axios.get('/blog/getRecentArticle')
         .then((response)=>{
         this.recentArticles=response.data.recentArticles;
         })
         .catch((response)=>{
         console.log(response);
-      }),
-      this.$axios.post("/blog/hotArticle")
-      .then((response)=>{
-          this.hotArticles=response.data.hotArticles;
-      })
-      .catch((response)=>{
-          console.log(response)
-      })
+        }),
+        this.$axios.get("/blog/getHotArticle")
+        .then((response)=>{
+            this.hotArticles=response.data.hotArticles;
+        })
+        .catch((response)=>{
+            console.log(response)
+        })
 
     },
 }
@@ -123,7 +123,7 @@ export default {
     }
     .blog-main-right-top-item a{
         text-decoration: none;
-        color: #000;
+        color: rgb(82, 81, 81);
         margin-left: 35px;
         margin-right: 35px;
         height: 32px;
@@ -169,7 +169,7 @@ export default {
     }
     .blog-main-right-bottom-item a{
         text-decoration: none;
-        color: #000;
+        color: rgb(82, 81, 81);
         margin-left: 35px;
         margin-right: 35px;
         height: 32px;

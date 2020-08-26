@@ -27,10 +27,10 @@ export default {
                 //将查询结果绑定到search页面
                 //search 表示vuex的文件名
                 this.$router.push({
-                path:"/search",
-                name:"Search",
+                    path:"/search",
+                    name:"Search",
                 }
-                .catch(err => {})
+                //.catch(err => err)
                 )
             })
             .catch((response)=>{
@@ -53,13 +53,6 @@ export default {
          border: 1px solid rgb(124, 109, 109,0.7);
          /* 轮廓 */
         padding-left: 16px;
-    }
-    .blog-search:hover{
-        /*鼠标滑过显示为手*/
-        cursor:pointer;
-        /* 阴影 */
-        box-shadow: 0px 0px 3px  rgba(29, 28, 28,0.7)
-        
     }
     .search-input{
        display:block;

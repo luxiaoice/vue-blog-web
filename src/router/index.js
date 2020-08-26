@@ -18,7 +18,10 @@ Vue.use(VueRouter)
     //如果这么用不会延迟加载那么加载会变慢
     //component: Home
     //这么做js文件会被拆分并且懒加载
-    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue')
+    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
+    meta:{
+      title:'首页'
+    }
   },
   {
     path: '/about',
@@ -26,37 +29,59 @@ Vue.use(VueRouter)
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue'),
+    meta:{
+      title:'关于我'
+    }
   },
   {
     path: '/archives',
     name: 'Archives',
-    component: () => import(/* webpackChunkName: "archives" */ '@/views/Archives.vue')
+    component: () => import(/* webpackChunkName: "archives" */ '@/views/Archives.vue'),
+    meta:{
+      title:'归档'
+    }
   },
   {
     path: '/comment',
     name: 'Comment',
-    component: () => import(/* webpackChunkName: "comment" */ '@/views/Comment.vue')
+    component: () => import(/* webpackChunkName: "comment" */ '@/views/Comment.vue'),
+    meta:{
+      title:'留言'
+    }
+  
   },
   {
     path: '/friends',
     name: 'Friends',
-    component: () => import(/* webpackChunkName: "friends" */ '@/views/Friends.vue')
+    component: () => import(/* webpackChunkName: "friends" */ '@/views/Friends.vue'),
+    meta:{
+      title:'友情链接'
+    }
   },
   {
     path: '/tags',
     name: 'Tags',
-    component: () => import(/* webpackChunkName: "tags" */ '@/views/Tags.vue')
+    component: () => import(/* webpackChunkName: "tags" */ '@/views/Tags.vue'),
+    meta:{
+      title:'标签'
+    }
   },
   {
     path: '/types',
     name: 'Types',
-    component: () => import(/* webpackChunkName: "types" */ '@/views/Types.vue')
+    component: () => import(/* webpackChunkName: "types" */ '@/views/Types.vue'),
+    meta:{
+      title:'分类'
+    }
   },
   {
     path: '/search',
     name: 'Search',
-    component: () => import(/* webpackChunkName: "search" */ '@/views/Search.vue')
+    component: () => import(/* webpackChunkName: "search" */ '@/views/Search.vue'),
+    meta:{
+      title:'搜索'
+    }
   },
 ]
 

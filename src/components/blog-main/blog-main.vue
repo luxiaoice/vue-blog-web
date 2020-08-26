@@ -25,7 +25,6 @@ export default {
     gap:30px;
     padding: 30px;
     width: 1100px;
-    height: 650px;
     min-width: 960px;
     max-width: 1268px;
 }
