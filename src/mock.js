@@ -29,7 +29,12 @@ mock('/blog/getHeaderNav', (req, res) => {
                 },
                 {
                     id:5,
-                    name: "关于我",
+                    name: "留言板",
+                    url:"/comment"
+                },
+                {
+                    id:6,
+                    name: "关于",
                     url:"/about"
                 },
                 
@@ -261,6 +266,302 @@ mock(RegExp('/blog/getHomeIndex'+ ".*"),'post',(params) => {
     
     let newIndexData= indexData.slice((pages.currentPage-1)*pages.pageSize,(pages.currentPage)*pages.pageSize)
     
+    return{
+        indexData : {
+            pages,
+            newIndexData
+        }
+    }
+})
+mock('/blog/getTypes',(req,res) => {
+    let types =
+    [
+        {   
+            id:1,
+            name : "代码人生",
+            url: "/types/coding",
+            count:2
+
+        },
+        {
+            id:2,
+            name:"生活感悟",
+            url: "/types/lifeInsights",
+            count:3
+        },
+        {
+            id:3,
+            name:"实用工具",
+            url: "/types/utilities",
+            count:6
+        },
+        {
+            id:4,
+            name:"风景如画",
+            url: "/types/picturesque",
+            count:8
+        },
+    ]
+    return{
+        types:types
+    }
+})
+mock(RegExp('/blog/getType'+ ".*"),'post',(params) => {
+    let paramsData = JSON.parse(params.body).params;
+    let indexData =
+    [
+        {   
+            id:1,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:99,
+            commentsNumber:6,
+            type:"文言文",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:2,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:99,
+            commentsNumber:6,
+            type:"风景如画",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:3,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:99,
+            commentsNumber:6,
+            type:"实用工具",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:4,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:77,
+            commentsNumber:6,
+            type:"生活感悟",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:5,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:98,
+            commentsNumber:6,
+            type:"代码人生",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:6,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:98,
+            commentsNumber:6,
+            type:"代码人生",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:7,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:98,
+            commentsNumber:6,
+            type:"代码人生",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:8,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:98,
+            commentsNumber:6,
+            type:"代码人生",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+    ]
+    let searchIndexDate=indexData.filter(indexData => indexData.type === paramsData.type)
+    let pages = {
+        //当前页
+        currentPage:paramsData.currentPage,
+        //一页多少个
+        pageSize:3,
+        //总页数
+        totalPageNum: searchIndexDate.length%3==0?searchIndexDate.length/3:parseInt(searchIndexDate.length/3)+1,
+        //总个数
+        //totalNum: indexData.length,
+        //是否有下一页
+        //hasPrev:true,
+        //hasNext:true,
+    }
+    let newIndexData= searchIndexDate.slice((pages.currentPage-1)*pages.pageSize,(pages.currentPage)*pages.pageSize)
+    return{
+        indexData : {
+            pages,
+            newIndexData
+        }
+    }
+})
+mock('/blog/getTags',(req,res) => {
+    let tags =
+    [
+        {   
+            id:1,
+            name : "hi",
+            url: "/tags/hi",
+            count:2
+
+        },
+        {
+            id:2,
+            name:"vue",
+            url: "/tags/vue",
+            count:3
+        },
+        {
+            id:3,
+            name:"css",
+            url: "/tags/css",
+            count:6
+        },
+        {
+            id:4,
+            name:"java",
+            url: "/tags/java",
+            count:8
+        },
+    ]
+    return{
+        tags:tags
+    }
+})
+mock(RegExp('/blog/getTag'+ ".*"),'post',(params) => {
+    let paramsData = JSON.parse(params.body).params;
+    let indexData =
+    [
+        {   
+            id:1,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:99,
+            commentsNumber:6,
+            tag:"java",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:2,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:99,
+            commentsNumber:6,
+            tag:"java",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:3,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:99,
+            commentsNumber:6,
+            tag:"java",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:4,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:77,
+            commentsNumber:6,
+            tagç:"hi",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:5,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:98,
+            commentsNumber:6,
+            tag:"java",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:6,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:98,
+            commentsNumber:6,
+            tag:"java",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:7,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:98,
+            commentsNumber:6,
+            tag:"vue",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+        {   
+            id:8,
+            title : "出师表",
+            author: "诸葛亮",
+            picture:"",
+            heat:98,
+            commentsNumber:6,
+            tag:"css",
+            content: "《出师表》出自于《三国志·诸葛亮传》卷三十五，是三国时期（227年）汉丞相诸葛亮在决定北上伐魏、夺取长安（今汉长安城遗址）之前给后主刘禅上书的表文。这篇表文以议论为主，兼用记叙和抒情。以恳切委婉的言辞劝勉后主要广开言路、严明赏罚、亲贤远佞，以此兴复汉室 还于旧都；同时也表达自己以身许国，忠贞不二的思想。全文既不借助于华丽的辞藻，又不引用古老的典故，多以四字句行文。此篇文章入选人教版初中语文九年级下册教科书。"
+
+        },
+    ]
+    let searchIndexDate=indexData.filter(indexData => indexData.tag === paramsData.tag)
+    let pages = {
+        //当前页
+        currentPage:paramsData.currentPage,
+        //一页多少个
+        pageSize:3,
+        //总页数
+        totalPageNum: searchIndexDate.length%3==0?searchIndexDate.length/3:parseInt(searchIndexDate.length/3)+1,
+        //总个数
+        //totalNum: indexData.length,
+        //是否有下一页
+        //hasPrev:true,
+        //hasNext:true,
+    }
+    let newIndexData= searchIndexDate.slice((pages.currentPage-1)*pages.pageSize,(pages.currentPage)*pages.pageSize)
     return{
         indexData : {
             pages,

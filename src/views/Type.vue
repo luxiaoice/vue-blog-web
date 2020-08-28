@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="type">
     <div class="home-card" v-for="indexData in indexData" :key="indexData.id">
       <div class="home-card-left">
           <div class="home-card-left-box">
@@ -37,7 +37,7 @@
 <script>
 
 export default {
-  name: 'Home',
+  name: 'Type',
   data(){
     return{
       pages: {
@@ -53,7 +53,8 @@ export default {
         //hasPrev:true,
         //hasNext:true,
       },
-      indexData:[]
+      indexData:[],
+      
     }
   },
   components: {
@@ -70,13 +71,14 @@ export default {
         }
   },
   created(){
-    this.getIndexData()
+    this.getType()
   },
   methods: {
-    getIndexData(){
-      this.$axios.post('/blog/getHomeIndex',{
+    getType(){
+      this.$axios.post('/blog/getType',{
           params: {
             currentPage:this.pages.currentPage,
+            type: this.$route.matched[1].meta.title
           }})
           .then((response)=>{
             this.indexData=response.data.indexData.newIndexData;
@@ -89,20 +91,20 @@ export default {
     pagePrevious(){
       if(this.pages.currentPage>1){
       this.pages.currentPage=this.pages.currentPage-1;
-      this.getIndexData()
+      this.getType()
       }
     },
     pageNext(){
     if(this.pages.currentPage<this.pages.totalPageNum){
       this.pages.currentPage=this.pages.currentPage+1;
-      this.getIndexData()
+      this.getType()
     }
     }
   },
 }
 </script>
 <style>
-  .home{
+  .type{
     width: 570px;
   }
   .home-card{

@@ -31,7 +31,7 @@ Vue.use(VueRouter)
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue'),
     meta:{
-      title:'关于我'
+      title:'关于'
     }
   },
   {
@@ -65,15 +65,84 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "tags" */ '@/views/Tags.vue'),
     meta:{
       title:'标签'
-    }
+    },
+    children:[
+      {
+        path: 'hi',
+        name: 'hi',
+        component: () => import(/* webpackChunkName: "type" */ '@/views/Tag.vue'),
+        meta:{
+          title: "hi"
+        }
+      },
+      {
+        path: 'css',
+        name: 'css',
+        component: () => import(/* webpackChunkName: "type" */ '@/views/Tag.vue'),
+        meta:{
+          title: "css"
+        }
+      },
+      {
+        path: 'vue',
+        name: 'vue',
+        component: () => import(/* webpackChunkName: "type */ '@/views/Tag.vue'),
+        meta:{
+          title: "vue"
+        }
+      },
+      {
+        path: 'java',
+        name: 'java',
+        component: () => import(/* webpackChunkName: "type" */ '@/views/Tag.vue'),
+        meta:{
+          title: "java"
+        }
+      },
+    ]
   },
   {
     path: '/types',
     name: 'Types',
     component: () => import(/* webpackChunkName: "types" */ '@/views/Types.vue'),
     meta:{
-      title:'分类'
-    }
+      title:'分类',
+      
+    },
+    children:[
+      {
+        path: 'coding',
+        name: 'Coding',
+        component: () => import(/* webpackChunkName: "type" */ '@/views/Type.vue'),
+        meta:{
+          title: "代码人生"
+        }
+      },
+      {
+        path: 'lifeInsights',
+        name: 'LifeInsights',
+        component: () => import(/* webpackChunkName: "type" */ '@/views/Type.vue'),
+        meta:{
+          title: "人生感悟"
+        }
+      },
+      {
+        path: 'utilities',
+        name: 'Utilities',
+        component: () => import(/* webpackChunkName: "type */ '@/views/Type.vue'),
+        meta:{
+          title: "实用工具"
+        }
+      },
+      {
+        path: 'picturesque',
+        name: 'Picturesque',
+        component: () => import(/* webpackChunkName: "type" */ '@/views/Type.vue'),
+        meta:{
+          title: "风景如画"
+        }
+      },
+    ]
   },
   {
     path: '/search',

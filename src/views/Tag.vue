@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="tag">
     <div class="home-card" v-for="indexData in indexData" :key="indexData.id">
       <div class="home-card-left">
           <div class="home-card-left-box">
@@ -9,7 +9,8 @@
               <div class="home-card-left-box-icon">
                 <span class="home-card-left-box-title-span">{{indexData.heat}}热度</span>
                 <span class="home-card-left-box-title-span">{{indexData.commentsNumber}}</span>
-                <span class="home-card-left-box-title-span">{{indexData.type}}</span>
+                <!-- 和type唯一区别 -->
+                <span class="home-card-left-box-title-span">{{indexData.tag}}</span>
               </div>
               <div class="home-card-left-box-content">
                 <span class="home-card-left-box-content-span">{{indexData.content | ellipsis}}</span>
@@ -37,7 +38,7 @@
 <script>
 
 export default {
-  name: 'Home',
+  name: 'Tag',
   data(){
     return{
       pages: {
@@ -53,7 +54,8 @@ export default {
         //hasPrev:true,
         //hasNext:true,
       },
-      indexData:[]
+      indexData:[],
+      
     }
   },
   components: {
@@ -70,13 +72,14 @@ export default {
         }
   },
   created(){
-    this.getIndexData()
+    this.getTag()
   },
   methods: {
-    getIndexData(){
-      this.$axios.post('/blog/getHomeIndex',{
+    getTag(){
+      this.$axios.post('/blog/getTag',{
           params: {
             currentPage:this.pages.currentPage,
+            tag: this.$route.matched[1].meta.title
           }})
           .then((response)=>{
             this.indexData=response.data.indexData.newIndexData;
@@ -89,20 +92,20 @@ export default {
     pagePrevious(){
       if(this.pages.currentPage>1){
       this.pages.currentPage=this.pages.currentPage-1;
-      this.getIndexData()
+      this.getTag()
       }
     },
     pageNext(){
     if(this.pages.currentPage<this.pages.totalPageNum){
       this.pages.currentPage=this.pages.currentPage+1;
-      this.getIndexData()
+      this.getTag()
     }
     }
   },
 }
 </script>
 <style>
-  .home{
+  .type{
     width: 570px;
   }
   .home-card{

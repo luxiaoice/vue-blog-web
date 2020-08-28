@@ -21,7 +21,7 @@ export default {
     .blog-main-middle{
         display: grid;
         grid-template-rows: 52px auto 52px;
-        gap: 2%;
+        gap: 13px;
         width: 100%;
     }
     .blog-main-middle-top{
