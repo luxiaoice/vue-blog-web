@@ -37,7 +37,7 @@
 <script>
 
 export default {
-  name: 'Type',
+  name: 'type',
   data(){
     return{
       pages: {
@@ -106,6 +106,7 @@ export default {
 <style>
   .type{
     width: 570px;
+    height: 801px;
   }
   .home-card{
       display: flex; /* 设置为块元素 */
@@ -155,10 +156,8 @@ export default {
       padding-left: 30px;
       padding-right: 30px;
     }
-    .home-card-left-box-title-titlespan:hover{
+    .home-card-left-box-title-title span:hover{
       cursor:text;
-    }
-    .home-card-left-box-title-titlespan:hover{
       color: #000;
     }
     .home-card-left-box-icon{
@@ -172,8 +171,8 @@ export default {
       padding-right: 20px;
     }
     .home-card-left-box-title-span{
-      margin-left: 20px;
-      margin-right: 20px;
+      margin-left: 17px;
+      margin-right: 17px;
       font-size: 6px;
       color: rgb(112, 112, 112);
     }

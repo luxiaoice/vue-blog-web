@@ -569,3 +569,224 @@ mock(RegExp('/blog/getTag'+ ".*"),'post',(params) => {
         }
     }
 })
+mock('/blog/getArchives',(req,res) => {
+    let archivesItem =
+    [
+        {   
+            id:1,
+            title : "出师表出师表出师表出师表出师表",
+            url: "",
+            date:"2020年8月29日 12:43:23"
+
+        },
+        {
+            id:2,
+            title:"vuevuevuevuevue",
+            url: "",
+            date:"2020年8月29日 12:43:23"
+        },
+        {
+            id:3,
+            title:"css",
+            url: "",
+            date:"2020年8月29日 12:43:23"
+        },
+        {
+            id:4,
+            title:"java",
+            url: "",
+            date:"2020年8月29日 12:43:23"
+        },
+    ]
+    return{
+        archivesItem:archivesItem
+    }
+})
+mock(RegExp('/blog/getComment'+ ".*"),'post',(params) => {
+    let currentPage = JSON.parse(params.body).params.currentPage;
+    let commentData =
+    [
+        {   
+            id:1,
+            userId:"11",
+            name:"小白",
+            date:"2020年2月9日 20:23:23",
+            ip:"192.134.143.21",
+            ipaddress:"北京市",
+            comment:"今天天气真好，天气晴朗很适合户外运动，但是我不想出去因为我想写代码写代码让我快乐",
+            subComments:[
+                {
+                    id:11,
+                    userId:"12",
+                    targetUserId:11,
+                    name:"小白hh",
+                    date:"2020年2月9日 20:23:23",
+                    ip:"192.134.143.21",
+                    ipaddress:"北京市",
+                    comment:"写代码不是真的快乐",
+                },
+                {
+                    id:12,
+                    userId:"11",
+                    targetUserId:11,
+                    name:"小白bb",
+                    date:"2020年2月9日 20:23:23",
+                    ip:"192.134.143.21",
+                    ipaddress:"北京市",
+                    comment:"写代码不是真的快乐",
+                }
+            ]
+
+        },
+        {   
+            id:2,
+            userId:"11",
+            name:"小白",
+            date:"2020年2月9日 20:23:23",
+            ip:"192.134.143.21",
+            ipaddress:"北京市",
+            comment:"今天天气真好，天气晴朗很适合户外运动，但是我不想出去因为我想写代码写代码让我快乐",
+            subComments:[
+                {
+                    id:13,
+                    userId:"12",
+                    targetUserId:11,
+                    name:"小白hh",
+                    date:"2020年2月9日 20:23:23",
+                    ip:"192.134.143.21",
+                    ipaddress:"北京市",
+                    comment:"写代码不是真的快乐",
+                },
+                {
+                    id:23,
+                    userId:"11",
+                    targetUserId:11,
+                    name:"小白bb",
+                    date:"2020年2月9日 20:23:23",
+                    ip:"192.134.143.21",
+                    ipaddress:"北京市",
+                    comment:"写代码不是真的快乐",
+                }
+            ]
+
+        },
+        {   
+            id:3,
+            userId:"11",
+            name:"小白",
+            date:"2020年2月9日 20:23:23",
+            ip:"192.134.143.21",
+            ipaddress:"北京市",
+            comment:"今天天气真好，天气晴朗很适合户外运动，但是我不想出去因为我想写代码写代码让我快乐",
+            subComments:[
+                {
+                    id:15,
+                    userId:"12",
+                    targetUserId:11,
+                    name:"小白hh",
+                    date:"2020年2月9日 20:23:23",
+                    ip:"192.134.143.21",
+                    ipaddress:"北京市",
+                    comment:"写代码不是真的快乐",
+                },
+                {
+                    id:25,
+                    userId:"11",
+                    targetUserId:11,
+                    name:"小白bb",
+                    date:"2020年2月9日 20:23:23",
+                    ip:"192.134.143.21",
+                    ipaddress:"北京市",
+                    comment:"写代码不是真的快乐",
+                }
+            ]
+
+        },
+        {   
+            id:4,
+            userId:"11",
+            name:"小白",
+            date:"2020年2月9日 20:23:23",
+            ip:"192.134.143.21",
+            ipaddress:"北京市",
+            comment:"今天天气真好，天气晴朗很适合户外运动，但是我不想出去因为我想写代码写代码让我快乐",
+            subComments:[
+                {
+                    id:16,
+                    userId:"12",
+                    targetUserId:11,
+                    name:"小白hh",
+                    date:"2020年2月9日 20:23:23",
+                    ip:"192.134.143.21",
+                    ipaddress:"北京市",
+                    comment:"写代码不是真的快乐",
+                },
+                {
+                    id:26,
+                    userId:"11",
+                    targetUserId:11,
+                    name:"小白bb",
+                    date:"2020年2月9日 20:23:23",
+                    ip:"192.134.143.21",
+                    ipaddress:"北京市",
+                    comment:"写代码不是真的快乐",
+                }
+            ]
+
+        },
+        {   
+            id:5,
+            userId:"11",
+            name:"小白",
+            date:"2020年2月9日 20:23:23",
+            ip:"192.134.143.21",
+            ipaddress:"北京市",
+            comment:"今天天气真好，天气晴朗很适合户外运动，但是我不想出去因为我想写代码写代码让我快乐",
+            subComments:[
+                {
+                    id:17,
+                    userId:"12",
+                    targetUserId:11,
+                    name:"小白hh",
+                    date:"2020年2月9日 20:23:23",
+                    ip:"192.134.143.21",
+                    ipaddress:"北京市",
+                    comment:"写代码不是真的快乐",
+                },
+                {
+                    id:27,
+                    userId:"11",
+                    targetUserId:11,
+                    name:"小白bb",
+                    date:"2020年2月9日 20:23:23",
+                    ip:"192.134.143.21",
+                    ipaddress:"北京市",
+                    comment:"写代码不是真的快乐",
+                }
+            ]
+
+        },
+    ]
+    let pages = {
+        //当前页
+        currentPage:currentPage,
+        //一页多少个
+        pageSize:3,
+        //总页数
+        totalPageNum: commentData.length%3==0?commentData.length/3:parseInt(commentData.length/3+1),
+        //总个数
+        //totalNum: indexData.length,
+        //是否有下一页
+        //hasPrev:true,
+        //hasNext:true,
+    }
+    
+    let newcommentData= commentData.slice((pages.currentPage-1)*pages.pageSize,(pages.currentPage)*pages.pageSize)
+    
+    return{
+        commentData : {
+            pages,
+            newcommentData
+        }
+    }
+})

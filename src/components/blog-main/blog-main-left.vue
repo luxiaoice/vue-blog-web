@@ -17,7 +17,7 @@
         
         <div class="blog-main-left-bottom">
             <div class="blog-main-left-bottom-top">
-                <div class=“blog-main-left-bottom-top-left”>分类</div>
+                <div class=“blog-main-left-bottom-top-left”>标签</div>
             </div>
             <div class="blog-main-left-bottom-item-box">
                 <div class="blog-main-left-bottom-item" v-for="tag in tags" :key="tag.id">
